@@ -1,8 +1,8 @@
 {
-  "name": "react-presentations",
+  "name": "react-16-3",
   "version": "0.1.0",
   "private": true,
-  "homepage": "https://eirhor.github.io/react-presentations",
+  "homepage": "https://eirhor.github.io/react-presentations/dist/react-16-3",
   "dependencies": {
     "gh-pages": "^1.1.0",
     "react": "^16.3.2",
