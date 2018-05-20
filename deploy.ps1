@@ -6,6 +6,7 @@ foreach ($d in $directories) {
     $name = $d.Name
     $path = Join-Path -Path $d.FullName -ChildPath ""
     $buildFolder = $path + "build"
+    $buildIndex = $buildFolder + "\index.html"
     $distFolder = $dist + $name
 
     Push-Location $path
@@ -16,7 +17,8 @@ foreach ($d in $directories) {
         Remove-Item $distFolder -Force -Recurse
     }
 
-    Copy-Item $buildFolder -Destination $distFolder -Recurse -Force
+    Copy-Item $buildFolder -Destination $distFolder -Force -Recurse
+    Remove-Item $buildFolder -Force -Recurse
 
-    Write-Output $buildFolder
+    Write-Output $buildIndex
 }
