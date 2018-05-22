@@ -19,6 +19,9 @@ foreach ($d in $directories) {
 
     Copy-Item $buildFolder -Destination $distFolder -Force -Recurse
     Remove-Item $buildFolder -Force -Recurse
+}
 
-    Write-Output $buildIndex
+foreach ($d in $directories) {
+    $msg = "Created release for: " + $d.Name
+    Write-Output $msg
 }
