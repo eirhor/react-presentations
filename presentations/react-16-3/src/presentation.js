@@ -123,7 +123,7 @@ export default class Presentation extends React.Component {
             componentWillMount (Initializing state)
           </Heading>
           <Text textAlign="left">Before:</Text>
-          <CodePane lang="javascript" source={`
+          <CodePane theme="light" lang="javascript" source={`
             class ExampleComponent extends React.Component {
               state = {};
 
@@ -136,7 +136,7 @@ export default class Presentation extends React.Component {
             }
           `} />
           <Text textAlign="left">After:</Text>
-          <CodePane lang="javascript" source={`
+          <CodePane theme="light" lang="javascript" source={`
             class ExampleComponent extends React.Component {
               state = {
                 data: this.props.data,
@@ -153,7 +153,7 @@ export default class Presentation extends React.Component {
             componentWillMount (fetching external data)
           </Heading>
           <Text textAlign="left">Before:</Text>
-          <CodePane lang="javascript" source={`
+          <CodePane theme="light" lang="javascript" source={`
             class ExampleComponent extends React.Component {
               state = {};
 
@@ -163,7 +163,7 @@ export default class Presentation extends React.Component {
             }
           `} />
           <Text textAlign="left">After:</Text>
-          <CodePane lang="javascript" source={`
+          <CodePane theme="light" lang="javascript" source={`
             class ExampleComponent extends React.Component {
               state = {};
 
@@ -181,7 +181,7 @@ export default class Presentation extends React.Component {
             componentWillReceiveProps (Updating state)
           </Heading>
           <Text textAlign="left">Before:</Text>
-          <CodePane lang="javascript" source={`
+          <CodePane theme="light" lang="javascript" source={`
             class ExampleComponent extends React.Component {
               state = {
                 colorTheme: 'red',
@@ -194,7 +194,7 @@ export default class Presentation extends React.Component {
             }
           `} />
           <Text textAlign="left">After:</Text>
-          <CodePane lang="javascript" source={`
+          <CodePane theme="light" lang="javascript" source={`
             class ExampleComponent extends React.Component {
               state = {
                 colorTheme: 'red',
@@ -217,7 +217,7 @@ export default class Presentation extends React.Component {
             componentWillReceiveProps (Side effects)
           </Heading>
           <Text textAlign="left">Before:</Text>
-          <CodePane lang="javascript" source={`
+          <CodePane theme="light" lang="javascript" source={`
             class ExampleComponent extends React.Component {
               componentWillReceiveProps(nextProps) {
                 if (this.props.isHidden !== nextProps.isHidden)
@@ -226,7 +226,7 @@ export default class Presentation extends React.Component {
             }
           `} />
           <Text textAlign="left">After:</Text>
-          <CodePane lang="javascript" source={`
+          <CodePane theme="light" lang="javascript" source={`
             class ExampleComponent extends React.Component {
               componentDidUpdate(prevProps) {
                 if (this.props.isHidden !== prevProps.isHidden)
@@ -243,7 +243,7 @@ export default class Presentation extends React.Component {
             componentWillUpdate (Invoke external callback)
           </Heading>
           <Text textAlign="left">Before:</Text>
-          <CodePane lang="javascript" source={`
+          <CodePane theme="light" lang="javascript" source={`
             class ExampleComponent extends React.Component {
               componentWillUpdate(nextProps, nextState) {
                 if (this.state.someValue !== nextState.someValue)
@@ -252,7 +252,7 @@ export default class Presentation extends React.Component {
             }
           `} />
           <Text textAlign="left">After:</Text>
-          <CodePane lang="javascript" source={`
+          <CodePane theme="light" lang="javascript" source={`
             class ExampleComponent extends React.Component {
               componentDidUpdate(prevProps, prevState) {
                 if (this.state.someValue !== prevState.someValue)
@@ -269,7 +269,7 @@ export default class Presentation extends React.Component {
             getSnapshotBeforeUpdate
           </Heading>
           <Text textAlign="left">Before:</Text>
-          <CodePane lang="javascript" source={`
+          <CodePane theme="light" lang="javascript" source={`
             class ExampleComponent extends React.Component {
               previousScrollHeight = null;
               componentWillUpdate(nextProps) {
@@ -282,7 +282,7 @@ export default class Presentation extends React.Component {
             }
           `} />
           <Text textAlign="left">After:</Text>
-          <CodePane lang="javascript" source={`
+          <CodePane theme="light" lang="javascript" source={`
             class ExampleComponent extends React.Component {
               getSnapshotBeforeUpdate(prevProps) {
                 if (prevProps.data.length < this.props.data.length) { return window.pageYOffset; }
@@ -302,11 +302,11 @@ export default class Presentation extends React.Component {
             Hacky way of doing it before:
           </Heading>
           <Text textAlign="left">Implementation</Text>
-          <CodePane lang="javascript" source={`
+          <CodePane theme="light" lang="javascript" source={`
             const ThisIsStupidButItWorks = ({ children }) => children;
           `} />
           <Text textAlign="left">Usage</Text>
-          <CodePane lang="javascript" source={`
+          <CodePane theme="light" lang="javascript" source={`
             const ArticlePreview = () => (
               <ThisIsStupidButItWorks>
                 <img src="asdasdasd" alt="asd123" />
@@ -323,7 +323,7 @@ export default class Presentation extends React.Component {
           <Heading margin="0 0 20px" padding="10px 20px" bgColor="gray" textColor="white" textAlign="left" size={6} bold>
             Now it comes out of the box.
           </Heading>
-          <CodePane lang="javascript" source={`
+          <CodePane theme="light" lang="javascript" source={`
             const ArticlePreview = () => (
               <React.Fragment>
                 <img src="asdasdasd" alt="asd123" />
@@ -351,7 +351,7 @@ export default class Presentation extends React.Component {
           <Heading margin="0 0 20px" padding="10px 20px" bgColor="gray" textColor="white" textAlign="left" size={6} bold>
             Usage step 1/3: Create a new context.
           </Heading>
-          <CodePane lang="javascript" source={`
+          <CodePane theme="light" lang="javascript" source={`
             // product object definition:
             // {
             //    code: string
@@ -376,7 +376,7 @@ export default class Presentation extends React.Component {
           <Heading margin="0 0 20px" padding="10px 20px" bgColor="gray" textColor="white" textAlign="left" size={6} bold>
             Usage step 2/3: Create a provider.
           </Heading>
-          <CodePane lang="javascript" source={`
+          <CodePane theme="light" lang="javascript" source={`
             class ProductListProvider extends React.Component {
               state = {
                 products: this.props.products, // might also be fetched from external API in componentDidMount
@@ -412,7 +412,7 @@ export default class Presentation extends React.Component {
           <Heading margin="0 0 20px" padding="10px 20px" bgColor="gray" textColor="white" textAlign="left" size={6} bold>
             Usage step 3/3: Create a consumer.
           </Heading>
-          <CodePane lang="javascript" source={`
+          <CodePane theme="light" lang="javascript" source={`
             export const ProductListConsumer = ({ render, children }) => {
               if (render) {
                 return (
@@ -434,6 +434,179 @@ export default class Presentation extends React.Component {
               }
 
               return null;
+            }
+          `} />
+        </Slide>
+        <Slide transition={['slide']} bgColor="white" align="flex-start flex-start">
+          <Heading margin="0" padding="20px 30px" bgColor="green" textColor="white" textAlign="left" caps size={3} bold>
+            Portals
+          </Heading>
+          <List>
+            <ListItem>Allows you to locate a child component outside your parent component in the DOM.</ListItem>
+            <ListItem>Still full control over it as a parent.</ListItem>
+            <ListItem>Perfect for modals, status messages etc.</ListItem>
+          </List>
+        </Slide>
+        <Slide transition={['slide']} bgColor="white" align="flex-start flex-start">
+          <Heading margin="0" padding="20px 30px" bgColor="green" textColor="white" textAlign="left" caps size={3} bold>
+            Portals
+          </Heading>
+          <Heading margin="0 0 20px" padding="10px 20px" bgColor="gray" textColor="white" textAlign="left" size={6} bold>
+            Usage step 1/2: Create a modal component.
+          </Heading>
+          <CodePane theme="light" lang="javascript" source={`
+            const modalRoot = document.getElementById('my-modal');
+
+            export class Modal extends React.Component {
+              el = document.createElement('div');
+
+              componentDidMount() {
+                modalRoot.appendChild(this.el);
+              }
+
+              componentWillUnmount() {
+                modalRoot.removeChild(this.el);
+              }
+
+              render() {
+                return ReactDOM.createPortal(
+                  this.props.children,
+                  this.el,
+                )
+              }
+            }
+          `} />
+        </Slide>
+        <Slide transition={['slide']} bgColor="white" align="flex-start flex-start">
+          <Heading margin="0" padding="20px 30px" bgColor="green" textColor="white" textAlign="left" caps size={3} bold>
+            Portals
+          </Heading>
+          <Heading margin="0 0 20px" padding="10px 20px" bgColor="gray" textColor="white" textAlign="left" size={6} bold>
+            Usage step 2/2: Use it in your parent component.
+          </Heading>
+          <CodePane theme="light" lang="javascript" source={`
+            export class Parent extends React.Component {
+              state = { clicks: 0, }
+
+              handleClick = () => {
+                this.setState(prevState => ({
+                  clicks: prevState.clicks + 1,
+                }));
+              }
+
+              render() {
+                return (
+                  <div onClick={this.handleClick}>
+                    <p>Inside parent:</p>
+                    <RenderCounter clicks={this.state.clicks} />
+
+                    <p>Inside modal, outside parent DOM:</p>
+                    <Modal>
+                        <RenderCounter clicks={this.state.clicks} />
+                    </Modal>
+                  </div>
+                )
+              }
+            }
+
+            export const RenderCounter = ({ clicks }) => (
+                <p>Number of clicks: {clicks}</p>
+            );
+          `} />
+        </Slide>
+        <Slide transition={['slide']} bgColor="white" align="flex-start flex-start">
+          <Heading margin="0" padding="20px 30px" bgColor="green" textColor="white" textAlign="left" caps size={3} bold>
+            Error boundaries
+          </Heading>
+          <List>
+            <ListItem>Scope your errors</ListItem>
+            <ListItem>componentDidCatch(error, info)</ListItem>
+            <ListItem>Avoid page-breaking when one component or child has a exception.</ListItem>
+            <ListItem>Display a fallback when exception occurs.</ListItem>
+            <ListItem>Log errors to third party services like App Insights.</ListItem>
+          </List>
+        </Slide>
+        <Slide transition={['slide']} bgColor="white" align="flex-start flex-start">
+          <Heading margin="0" padding="20px 30px" bgColor="green" textColor="white" textAlign="left" caps size={3} bold>
+            Error Boundaries
+          </Heading>
+          <Heading margin="0 0 20px" padding="10px 20px" bgColor="gray" textColor="white" textAlign="left" size={6} bold>
+            Usage
+          </Heading>
+          <CodePane theme="light" lang="javascript" source={`
+            export class HandleError extends React.Component {
+              state = {
+                hasError: false,
+                error: '',
+                info: '',
+              }
+
+              componentDidCatch(error, info) {
+                _someLoggingService.push({ error, info }); // implement a way to push warnings to for instance app insights.
+
+                this.setState({
+                  error,
+                  info,
+                });
+              }
+
+              render() {
+                if (this.state.hasError && !this.props.fallbackComponent) return (<p>{this.state.error}</p>);
+
+                if (this.state.hasError && this.props.fallbackComponent) {
+                    const FallbackComponent = this.props.fallbackComponent;
+                    return (<FallbackComponent error={this.state.error} info={this.state.info} />);
+                }
+
+                return this.props.children;
+              }
+            }
+          `} />
+        </Slide>
+        <Slide transition={['slide']} bgColor="white" align="flex-start flex-start">
+          <Heading margin="0" padding="20px 30px" bgColor="green" textColor="white" textAlign="left" caps size={3} bold>
+            Refs
+          </Heading>
+          <Heading margin="0 0 20px" padding="10px 20px" bgColor="gray" textColor="white" textAlign="left" size={6} bold>
+            New way of creating and binding refs
+          </Heading>
+          <CodePane theme="light" lang="javascript" source={`
+            export class RefDemo extends React.Component {
+              state = {
+                containerHeight: 0,
+              }
+
+              container = React.createRef();
+
+              componentDidMount() {
+                this.setState({ containerHeight: container.current.clientHeight });
+              }
+
+              componentDidUpdate() {
+                this.setState({ containerHeight: container.current.clientHeight });
+              }
+
+              render() {
+                return (
+                  <div ref={this.container}>
+                    <p>container height: {this.state.containerHeight}</p>
+                  </div>
+                )
+              }
+            }
+          `} />
+        </Slide>
+        <Slide transition={['slide']} bgColor="white" align="flex-start flex-start">
+          <Heading margin="0" padding="20px 30px" bgColor="green" textColor="white" textAlign="left" caps size={3} bold>
+            String components
+          </Heading>
+          <Heading margin="0 0 20px" padding="10px 20px" bgColor="gray" textColor="white" textAlign="left" size={6} bold>
+            You can now return a string in a component.
+          </Heading>
+          <CodePane theme="light" lang="javascript" source={`
+            const ConvertTextToSomething = ({ children }) => {
+              // do some conversion algorithm
+              return 'untill algorithm is made, return this';
             }
           `} />
         </Slide>
