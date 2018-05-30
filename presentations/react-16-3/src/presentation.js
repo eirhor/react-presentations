@@ -610,6 +610,11 @@ export default class Presentation extends React.Component {
             }
           `} />
         </Slide>
+        <Slide transition={['zoom']} bgColor="purple">
+          <Heading size={1} fit caps lineHeight={1} textColor="green">
+            Questions?
+          </Heading>
+        </Slide>
       </Deck>
     );
   }
